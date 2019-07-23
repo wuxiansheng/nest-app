@@ -12,6 +12,10 @@ export class CreateUserDto {
     @ApiModelProperty()
     readonly nickname: string;
     @ApiModelProperty()
+    readonly age: number;
+    @ApiModelProperty()
+    readonly living: boolean;
+    @ApiModelProperty()
     readonly createdAt: string;
     @ApiModelProperty()
     readonly updatedAt: string;

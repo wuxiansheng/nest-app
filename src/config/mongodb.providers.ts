@@ -4,6 +4,6 @@ export const mongodbProviders = [
   {
     provide: 'MONGODBDATABASE_CONNECTION',
     useFactory: (): Promise<typeof mongoose> =>
-      mongoose.connect('mongodb://localhost:27017/nest', {useNewUrlParser: true }),
+      mongoose.connect('mongodb://localhost:27017/nest', {useNewUrlParser: true , useCreateIndex: true}),
   },
 ];

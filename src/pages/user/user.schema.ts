@@ -1,10 +1,29 @@
 import * as mongoose from 'mongoose';
 export const UserSchema = new mongoose.Schema ({
-    userName: String,
+    userName: {
+        type: String,
+        unique: true,
+    },
     password: String,
-    email: String,
-    phone: Number,
-    nickname: String,
+    email: {
+        type: String,
+        unique: true,
+    },
+    phone: {
+        type: Number,
+        unique: true,
+    },
+    age: {
+        type: Number,
+        min: 18,
+        max: 65,
+    },
+    nickname:
+      {
+          type: String,
+          unique: true,
+      },
+    living:  Boolean,
     createAt: {
         type: Date,
         default: Date.now,
