@@ -41,9 +41,16 @@ import { TagsService } from './pages/social/tags/tags.service';
 import { TagsModule } from './pages/social/tags/tags.module';
 import { NoticeController } from './pages/sys/notice/notice.controller';
 import { NoticeModule } from './pages/sys/notice/notice.module';
+import { GraphQLModule } from '@nestjs/graphql';
 @Module({
   imports: [
     UserModule,
+    GraphQLModule.forRoot({
+      typePaths: ['./**/*.graphql'],
+      installSubscriptionHandlers: true,
+      debug: false,
+      playground: false,
+    }),
     LogModule,
     ArticleModule,
      RoleModule,

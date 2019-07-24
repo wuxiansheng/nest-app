@@ -1,4 +1,4 @@
-import { CreateLogDto } from './../log/dto/create-log.dto';
+import { CreateLogDto } from './../sys/log/dto/create-log.dto';
 import { Model } from 'mongoose';
 import { Injectable, Inject } from '@nestjs/common';
 import { User } from './interfaces/user.interfaces';
