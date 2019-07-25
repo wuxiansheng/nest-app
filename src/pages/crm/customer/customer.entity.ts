@@ -9,6 +9,8 @@ export class  Customer {
   @Column()
   age: number;
   @Column()
+  sex: number;
+  @Column()
   email: string;
   @Column()
   phone: number;

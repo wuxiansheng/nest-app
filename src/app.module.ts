@@ -34,6 +34,10 @@ import { PermissionItemsController } from './pages/rabc/permission-items/permiss
 import { ImpeachReportsController } from './pages/social/impeach-reports/impeach-reports.controller';
 import { NavigationsController } from './pages/sys/navigations/navigations.controller';
 import { EmailController } from './pages/sys/email/email.controller';
+import { BankController } from './pages/crm/bank/bank.controller';
+import { BankService } from './pages/crm/bank/bank.service';
+import { BankModule } from './pages/crm/bank/bank.module';
+import { DashboardModule } from './pages/crm/dashboard/dashboard.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -63,8 +67,13 @@ import { EmailController } from './pages/sys/email/email.controller';
     NoticeModule,
     NoticeTypesModule,
     NoticeSettingsModule,
+    BankModule,
+    DashboardModule,
   ],
-  controllers: [AppController, NoticeTypesController, SpecialContentItemsController, SpecialContentTypesController, AttitudesController, AttitudeRecordsController, FavoritesController, MessagesController, MessageSessionsController, PermissionsController, PermissionItemsController, ImpeachReportsController, NavigationsController, EmailController],
-  providers: [AppService],
+  controllers: [AppController, NoticeTypesController, SpecialContentItemsController,
+    SpecialContentTypesController, AttitudesController, AttitudeRecordsController, FavoritesController,
+    MessagesController, MessageSessionsController, PermissionsController, PermissionItemsController,
+    ImpeachReportsController, NavigationsController, EmailController, BankController],
+  providers: [AppService, BankService],
 })
 export class AppModule {}
