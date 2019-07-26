@@ -19,6 +19,6 @@ export class UserController {
     @ApiResponse({ status: 201, description: 'The record has been successfully created.'})
     @ApiResponse({ status: 403, description: 'Forbidden.'})
     creat(@Body() creatUserDto: CreateUserDto) {
-        this.userService.create(creatUserDto);
+       return this.userService.create(creatUserDto);
     }
 }

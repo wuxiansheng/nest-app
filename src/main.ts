@@ -4,9 +4,12 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import * as helmet from 'helmet';
 import * as csurf from 'csurf';
 import * as compression from 'compression';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  // pipe自动验证
+  app.useGlobalPipes(new ValidationPipe());
   // swagger
   const options = new DocumentBuilder()
   .setTitle('NEST RESTFULL API')
