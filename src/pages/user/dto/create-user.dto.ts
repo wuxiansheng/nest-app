@@ -1,8 +1,7 @@
-@Post()
 import { ApiModelProperty } from '@nestjs/swagger';
 export class CreateUserDto {
     @ApiModelProperty()
-    readonly userName: string;
+    readonly username: string;
     @ApiModelProperty()
     readonly password: string;
     @ApiModelProperty()
@@ -10,13 +9,9 @@ export class CreateUserDto {
     @ApiModelProperty()
     readonly phone: number;
     @ApiModelProperty()
-    readonly nickname: string;
+    readonly image: string;
     @ApiModelProperty()
-    readonly age: number;
+    readonly favorites: object;
     @ApiModelProperty()
-    readonly living: boolean;
-    @ApiModelProperty()
-    readonly createdAt: string;
-    @ApiModelProperty()
-    readonly updatedAt: string;
+    readonly article: object;
 }

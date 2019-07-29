@@ -34,8 +34,8 @@ export class Article {
   @Column('simple-array')
   tagList: string[];
 
-  @ManyToOne(type => User, user => user.article)
-  author: User;
+  @ManyToOne(type => User, user => user.articles)
+  user: User;
 
   @OneToMany(type => Comments, comment => comment.article, {eager: true})
   @JoinColumn()

@@ -25,6 +25,6 @@ export  class  User {
   @ManyToMany( type => Article)
   @JoinTable()
   favorites: Article[];
-  @OneToMany(type => Article, article => article.author)
-  article: Article[];
+  @OneToMany(type => Article, article => article.user)
+  articles: Article[];
 }

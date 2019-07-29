@@ -38,6 +38,7 @@ import { BankController } from './pages/crm/bank/bank.controller';
 import { BankService } from './pages/crm/bank/bank.service';
 import { BankModule } from './pages/crm/bank/bank.module';
 import { DashboardModule } from './pages/crm/dashboard/dashboard.module';
+import { AuthService } from './pages/user/auth/auth.service';
 @Module({
   imports: [
     TypeOrmModule.forRoot({

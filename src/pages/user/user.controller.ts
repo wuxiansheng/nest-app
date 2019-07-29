@@ -1,8 +1,9 @@
 import { CreateUserDto } from './dto/create-user.dto';
 import { Controller, Get, Post, Body } from '@nestjs/common';
 import { UserService } from './user.service';
-import { User } from './interfaces/user.interfaces';
+import { UserDate } from './interfaces/user.interfaces';
 import { ApiBearerAuth, ApiResponse, ApiUseTags } from '@nestjs/swagger';
+import { User } from './user.entity';
 
 @ApiUseTags('users')
 @ApiBearerAuth()
@@ -12,8 +13,8 @@ export class UserController {
     @Get()
     @ApiResponse({ status: 201, description: 'The record has been successfully findAll.'})
     @ApiResponse({ status: 403, description: 'Forbidden.'})
-    findAll(): Promise<User[]> {
-        return this.userService.findAll();
+    findAll(): Promise<User> {
+        return null;
     }
     @Post()
     @ApiResponse({ status: 201, description: 'The record has been successfully created.'})

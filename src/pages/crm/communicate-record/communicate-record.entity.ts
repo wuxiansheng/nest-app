@@ -1,10 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { User } from '../../user/user.entity';
 @Entity()
 export class CommunicateRecord {
     @PrimaryGeneratedColumn()
     id: number;
-    @Column()
-    customerId: string;
+    @ManyToOne(type => User, user => user.id)
+    customerId: User;
     @Column()
     commDate: string;
     @Column()
@@ -16,6 +17,5 @@ export class CommunicateRecord {
     @Column()
     commDetail: string;
     @Column()
-    commRemark: string;
-
+    commRemark: string
 }

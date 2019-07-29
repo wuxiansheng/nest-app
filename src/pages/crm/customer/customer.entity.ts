@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from '../../user/user.entity';
+import { Bank } from '../bank/bank.entity';
 
 @Entity()
 export class  Customer {
@@ -22,4 +24,12 @@ export class  Customer {
   company: string;
   @Column()
   birthday: string;
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
+  created: Date;
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
+  updated: Date;
+  @ManyToOne(type => User, user => user.id)
+  owner: User;
+  @ManyToOne(type => Bank, bank => bank.id)
+  bank: Bank;
 }

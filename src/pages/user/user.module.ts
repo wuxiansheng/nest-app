@@ -1,13 +1,13 @@
-
-import { MongoDbModule } from './../../config/mongodb.module';
 import { Module } from '@nestjs/common';
 import { UserController } from './user.controller';
-import { userProviders } from './user.providers';
 import { UserService } from './user.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from './user.entity';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-    imports: [MongoDbModule],
+    imports: [TypeOrmModule.forFeature([User]), AuthModule],
     controllers: [UserController],
-    providers: [UserService, ...userProviders],
+    providers: [UserService],
 })
 export class UserModule {}
